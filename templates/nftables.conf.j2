@@ -4,7 +4,9 @@
 # Site: {{ nftables_rules_site }}
 # Host: {{ inventory_hostname }}
 
+{% if flush %}
 flush ruleset
+{% endif %}
 
 include "/etc/nftables.d/common/*.nft";
 include "/etc/nftables.d/site/*.nft";
